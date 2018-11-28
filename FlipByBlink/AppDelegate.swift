@@ -18,11 +18,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             if let d = PDFDocument(url: url){
                 vc.pdfビュー.autoScales = true
                 vc.pdfビュー.displayMode = .singlePage
-                vc.pdfビュー.backgroundColor = .black
+                vc.pdfビュー.backgroundColor = .clear
                 vc.pdfビュー.displaysPageBreaks = false
                 vc.pdfビュー.document = d
                 vc.pdfビュー.goToFirstPage(nil)
             }
+            vc.view.backgroundColor = .black
         }
         do{
             try FileManager.default.removeItem(at: url)

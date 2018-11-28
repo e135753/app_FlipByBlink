@@ -33,7 +33,7 @@ class ViewController: UIViewController,ARSessionDelegate,ARSCNViewDelegate  {
             if let 開くPDF = PDFDocument(url: サンプルURL) {
                 pdfビュー.autoScales = true
                 pdfビュー.displayMode = .singlePage
-                pdfビュー.backgroundColor = .black
+                pdfビュー.backgroundColor = .clear
                 pdfビュー.displaysPageBreaks = false
                 pdfビュー.document = 開くPDF
             }
