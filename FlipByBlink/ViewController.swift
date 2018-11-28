@@ -35,6 +35,7 @@ class ViewController: UIViewController,ARSessionDelegate,ARSCNViewDelegate  {
                 pdfビュー.displayMode = .singlePage
                 pdfビュー.backgroundColor = .clear
                 pdfビュー.displaysPageBreaks = false
+                pdfビュー.pageShadowsEnabled = false
                 pdfビュー.document = 開くPDF
             }
         }
