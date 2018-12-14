@@ -13,9 +13,31 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+        print("urlは",url)
+        print("optionsは",options)
         
+        let udoc = UIDocument(fileURL: url)
+        
+        print(udoc)
+        
+        let fm = FileManager.default
+        
+        let savePdfUrl = URL(string: fm.urls(for: .documentDirectory, in: .userDomainMask)[0].absoluteString + "OpenedPDF.pdf")!
+
+        do{
+            try fm.removeItem(at: savePdfUrl)
+        }catch{
+            print("前に開いたPDFを削除できなかった")
+        }
+        
+        do{
+            try fm.copyItem(at: url, to: savePdfUrl)
+        }catch{
+            print("コピー失敗")
+        }
+
         if let vc:ViewController = window?.rootViewController as? ViewController{
-            if let d = PDFDocument(url: url){
+            if let d = PDFDocument(url: savePdfUrl){
                 vc.pdfビュー.autoScales = true
                 vc.pdfビュー.displayMode = .singlePage
                 vc.pdfビュー.backgroundColor = .clear
@@ -24,11 +46,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 vc.pdfビュー.goToFirstPage(nil)
             }
             vc.view.backgroundColor = .black
-        }
-        do{
-            try FileManager.default.removeItem(at: url)
-        }catch{
-            print("remove miss")
         }
         return true
     }
