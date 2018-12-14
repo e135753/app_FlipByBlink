@@ -63,6 +63,18 @@ class ViewController: UIViewController,ARSessionDelegate,ARSCNViewDelegate  {
     @IBAction func 高速でページ戻す(_ sender: Any) {
         pdfビュー.goToPreviousPage(nil)
     }
+    @IBAction func 前回のPDFを開く(_ sender: Any) {
+        let fm = FileManager.default
+        if let d = PDFDocument(url: URL(string: fm.urls(for: .documentDirectory, in: .userDomainMask)[0].absoluteString + "OpenedPDF.pdf")!){
+            pdfビュー.autoScales = true
+            pdfビュー.displayMode = .singlePage
+            pdfビュー.backgroundColor = .clear
+            pdfビュー.displaysPageBreaks = false
+            pdfビュー.document = d
+            pdfビュー.goToFirstPage(nil)
+        }
+        view.backgroundColor = .black
+    }
     
     func renderer(_ renderer: SCNSceneRenderer, didUpdate node: SCNNode, for anchor: ARAnchor) {
         guard let faceAnchor = anchor as? ARFaceAnchor else { return }

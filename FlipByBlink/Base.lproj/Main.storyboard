@@ -22,6 +22,15 @@
                                 <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l1V-Kc-ToW" userLabel="前開いたPDF">
+                                <rect key="frame" x="167" y="0.0" width="333.5" height="94"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="前回のPDFを開く:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6IE-Ql-9e0"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nFZ-RF-rlg">
                                 <rect key="frame" x="556" y="0.0" width="111" height="375"/>
                                 <gestureRecognizers/>
@@ -57,6 +66,8 @@
                             <constraint firstItem="XgV-ac-cQd" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="6am-n8-rc0"/>
                             <constraint firstItem="nFZ-RF-rlg" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="7cK-h8-tvK"/>
                             <constraint firstAttribute="bottom" secondItem="UiB-P3-W3y" secondAttribute="bottom" id="BJa-kN-HAu"/>
+                            <constraint firstItem="l1V-Kc-ToW" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="CZ7-KL-NAy"/>
+                            <constraint firstItem="l1V-Kc-ToW" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="1:4" id="Mti-Tt-pb2"/>
                             <constraint firstItem="UiB-P3-W3y" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Omn-GE-J02"/>
                             <constraint firstItem="XgV-ac-cQd" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="1:6" id="WQg-bE-FD8"/>
                             <constraint firstItem="XgV-ac-cQd" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Wnp-sv-pyQ"/>
@@ -64,7 +75,10 @@
                             <constraint firstItem="XCW-4m-L15" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="e8Z-0J-BA7"/>
                             <constraint firstItem="nFZ-RF-rlg" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="1:6" id="g1I-h8-bqz"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="nFZ-RF-rlg" secondAttribute="trailing" id="gjN-jm-Zma"/>
+                            <constraint firstItem="UiB-P3-W3y" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="h81-6W-BrQ"/>
+                            <constraint firstItem="l1V-Kc-ToW" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="oXJ-yB-RZG"/>
                             <constraint firstAttribute="trailing" secondItem="UiB-P3-W3y" secondAttribute="trailing" id="qOR-Ri-IOs"/>
+                            <constraint firstItem="l1V-Kc-ToW" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="1:2" id="sVf-3O-OX8"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="XCW-4m-L15" secondAttribute="bottom" constant="227" id="sbC-77-gQP"/>
                             <constraint firstItem="nFZ-RF-rlg" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="vCx-TC-nTv"/>
                             <constraint firstItem="XgV-ac-cQd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="wbx-KA-R9o"/>
