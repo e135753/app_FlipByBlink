@@ -8,7 +8,7 @@ import UIKit
 import PDFKit
 import ARKit
 
-class ViewController: UIViewController,ARSessionDelegate,ARSCNViewDelegate  {
+class ViewController: UIViewController,ARSessionDelegate,ARSCNViewDelegate,UIDocumentPickerDelegate {
     
     @IBOutlet weak var pdfビュー: PDFView!
     
@@ -74,6 +74,37 @@ class ViewController: UIViewController,ARSessionDelegate,ARSCNViewDelegate  {
             pdfビュー.goToFirstPage(nil)
         }
         view.backgroundColor = .black
+    }
+    
+    
+    @IBAction func pickerを呼び出す(_ sender: Any) {
+        let ピッカー = UIDocumentPickerViewController(documentTypes: ["com.adobe.pdf"], in: .import)
+        ピッカー.delegate = self
+        self.present(ピッカー, animated: true, completion: nil)
+    }
+    
+    func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
+        pdfビュー.autoScales = true
+        pdfビュー.backgroundColor = .clear
+        pdfビュー.document = PDFDocument(url: urls.first!)
+        pdfビュー.goToFirstPage(nil)
+        view.backgroundColor = .black
+        
+        let fm = FileManager.default
+        
+        let savePdfUrl = URL(string: fm.urls(for: .documentDirectory, in: .userDomainMask)[0].absoluteString + "OpenedPDF.pdf")!
+        
+        do{
+            try fm.removeItem(at: savePdfUrl)
+        }catch{
+            print("前に開いたPDFを削除できなかった")
+        }
+        
+        do{
+            try fm.copyItem(at: urls.first!, to: savePdfUrl)
+        }catch{
+            print("コピー失敗")
+        }
     }
     
     func renderer(_ renderer: SCNSceneRenderer, didUpdate node: SCNNode, for anchor: ARAnchor) {
