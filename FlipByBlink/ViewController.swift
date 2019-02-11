@@ -67,6 +67,7 @@ class ViewController: UIViewController,ARSessionDelegate,ARSCNViewDelegate,UIDoc
     }
     @IBAction func previousページ(_ sender: Any) {
         pdfビュー.goToPreviousPage(nil)
+        サンプルの2pならgifを表示する()
     }
     @IBAction func 高速でページ戻す(_ sender: Any) {
         pdfビュー.goToPreviousPage(nil)
@@ -82,6 +83,7 @@ class ViewController: UIViewController,ARSessionDelegate,ARSCNViewDelegate,UIDoc
             pdfビュー.goToFirstPage(nil)
         }
         view.backgroundColor = .black
+        gifプレビュー.isHidden = true
     }
     
     
@@ -113,6 +115,7 @@ class ViewController: UIViewController,ARSessionDelegate,ARSCNViewDelegate,UIDoc
         }catch{
             print("コピー失敗")
         }
+        gifプレビュー.isHidden = true
     }
     
     func renderer(_ renderer: SCNSceneRenderer, didUpdate node: SCNNode, for anchor: ARAnchor) {
@@ -157,6 +160,7 @@ class ViewController: UIViewController,ARSessionDelegate,ARSCNViewDelegate,UIDoc
 
     @objc func 左矢印で前のページへ移動(command: UIKeyCommand) {
         pdfビュー.goToPreviousPage(nil)
+        サンプルの2pならgifを表示する()
     }
     
     override var prefersHomeIndicatorAutoHidden: Bool {
@@ -174,7 +178,7 @@ class ViewController: UIViewController,ARSessionDelegate,ARSCNViewDelegate,UIDoc
         }
         
         let 今表示してるページ番号 = pdfビュー.document!.index(for: pdfビュー.currentPage!)
-        if 今表示してるページ番号 == 2{
+        if 今表示してるページ番号 != 1{
             gifプレビュー.isHidden = true
         }else{
             gifプレビュー.isHidden = false
