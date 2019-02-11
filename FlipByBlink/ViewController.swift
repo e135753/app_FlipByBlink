@@ -7,12 +7,15 @@
 import UIKit
 import PDFKit
 import ARKit
+import WebKit
 
 class ViewController: UIViewController,ARSessionDelegate,ARSCNViewDelegate,UIDocumentPickerDelegate {
     
     @IBOutlet weak var pdfビュー: PDFView!
     
     @IBOutlet weak var sceneビュー: ARSCNView!
+    
+    @IBOutlet weak var gifプレビュー: WKWebView!
     
     var ひとつ前に検出された目の開け具合:Double = 0.0
     var まばたきし始めた時刻:Date?
@@ -50,9 +53,14 @@ class ViewController: UIViewController,ARSessionDelegate,ARSCNViewDelegate,UIDoc
         
         UIApplication.shared.isIdleTimerDisabled = true
         
+        let gifData = NSData(contentsOfFile: Bundle.main.path(forResource: "demo",ofType:"gif")!)!
+        gifプレビュー.load(gifData as Data, mimeType: "image/gif", characterEncodingName: "utf-8", baseURL: NSURL() as URL)
+        gifプレビュー.isHidden = true
+        
     }
     @IBAction func nextページ(_ sender: Any) {
         pdfビュー.goToNextPage(nil)
+        サンプルの2pならgifを表示する()
     }
     @IBAction func 高速でページ進める(_ sender: Any) {
         pdfビュー.goToNextPage(nil)
@@ -121,6 +129,7 @@ class ViewController: UIViewController,ARSessionDelegate,ARSCNViewDelegate,UIDoc
                 if まだページ送りしてない{
                     DispatchQueue.main.async {
                         self.pdfビュー.goToNextPage(nil)
+                        self.サンプルの2pならgifを表示する()
                     }
                     
                     まだページ送りしてない = false
@@ -143,6 +152,7 @@ class ViewController: UIViewController,ARSessionDelegate,ARSCNViewDelegate,UIDoc
     
     @objc func 右矢印で次のページへ移動(command: UIKeyCommand) {
         pdfビュー.goToNextPage(nil)
+        サンプルの2pならgifを表示する()
     }
 
     @objc func 左矢印で前のページへ移動(command: UIKeyCommand) {
@@ -156,5 +166,20 @@ class ViewController: UIViewController,ARSessionDelegate,ARSCNViewDelegate,UIDoc
     override var prefersStatusBarHidden: Bool{
         return true
     }
+    
+    func サンプルの2pならgifを表示する(){
+        let 今開いているドキュメントURL = pdfビュー.document?.documentURL
+        if 今開いているドキュメントURL != Bundle.main.url(forResource: "サンプル", withExtension: "pdf"){
+            return
+        }
+        
+        let 今表示してるページ番号 = pdfビュー.document!.index(for: pdfビュー.currentPage!)
+        if 今表示してるページ番号 == 2{
+            gifプレビュー.isHidden = true
+        }else{
+            gifプレビュー.isHidden = false
+        }
+    }
+    
 }
 
