@@ -7,7 +7,7 @@
 import UIKit
 import PDFKit
 import ARKit
-import WebKit
+//import WebKit
 
 class ViewController: UIViewController,ARSessionDelegate,ARSCNViewDelegate,UIDocumentPickerDelegate {
     
@@ -15,7 +15,7 @@ class ViewController: UIViewController,ARSessionDelegate,ARSCNViewDelegate,UIDoc
     
     @IBOutlet weak var sceneビュー: ARSCNView!
     
-    @IBOutlet weak var gifプレビュー: WKWebView!
+//    @IBOutlet weak var gifプレビュー: WKWebView!
     
     var ひとつ前に検出された目の開け具合:Double = 0.0
     var まばたきし始めた時刻:Date?
@@ -28,6 +28,10 @@ class ViewController: UIViewController,ARSessionDelegate,ARSCNViewDelegate,UIDoc
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         
         まばたきし始めた時刻 = Date()
         まばたきし続けてる時刻 = Date()
@@ -53,11 +57,12 @@ class ViewController: UIViewController,ARSessionDelegate,ARSCNViewDelegate,UIDoc
         
         UIApplication.shared.isIdleTimerDisabled = true
         
-        let gifData = NSData(contentsOfFile: Bundle.main.path(forResource: "demo",ofType:"gif")!)!
-        gifプレビュー.load(gifData as Data, mimeType: "image/gif", characterEncodingName: "utf-8", baseURL: NSURL() as URL)
-        gifプレビュー.isHidden = true
+//        let gifData = NSData(contentsOfFile: Bundle.main.path(forResource: "demo",ofType:"gif")!)!
+//        gifプレビュー.load(gifData as Data, mimeType: "image/gif", characterEncodingName: "utf-8", baseURL: NSURL() as URL)
+//        gifプレビュー.isHidden = true
         
     }
+    
     @IBAction func nextページ(_ sender: Any) {
         pdfビュー.goToNextPage(nil)
         サンプルの2pならgifを表示する()
@@ -83,7 +88,7 @@ class ViewController: UIViewController,ARSessionDelegate,ARSCNViewDelegate,UIDoc
             pdfビュー.goToFirstPage(nil)
         }
         view.backgroundColor = .black
-        gifプレビュー.isHidden = true
+//        gifプレビュー.isHidden = true
     }
     
     
@@ -115,7 +120,7 @@ class ViewController: UIViewController,ARSessionDelegate,ARSCNViewDelegate,UIDoc
         }catch{
             print("コピー失敗")
         }
-        gifプレビュー.isHidden = true
+//        gifプレビュー.isHidden = true
     }
     
     func renderer(_ renderer: SCNSceneRenderer, didUpdate node: SCNNode, for anchor: ARAnchor) {
@@ -172,17 +177,17 @@ class ViewController: UIViewController,ARSessionDelegate,ARSCNViewDelegate,UIDoc
     }
     
     func サンプルの2pならgifを表示する(){
-        let 今開いているドキュメントURL = pdfビュー.document?.documentURL
-        if 今開いているドキュメントURL != Bundle.main.url(forResource: "サンプル", withExtension: "pdf"){
-            return
-        }
-        
-        let 今表示してるページ番号 = pdfビュー.document!.index(for: pdfビュー.currentPage!)
-        if 今表示してるページ番号 != 1{
-            gifプレビュー.isHidden = true
-        }else{
-            gifプレビュー.isHidden = false
-        }
+//        let 今開いているドキュメントURL = pdfビュー.document?.documentURL
+//        if 今開いているドキュメントURL != Bundle.main.url(forResource: "サンプル", withExtension: "pdf"){
+//            return
+//        }
+//
+//        let 今表示してるページ番号 = pdfビュー.document!.index(for: pdfビュー.currentPage!)
+//        if 今表示してるページ番号 != 1{
+//            gifプレビュー.isHidden = true
+//        }else{
+//            gifプレビュー.isHidden = false
+//        }
     }
     
 }

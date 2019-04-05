@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -68,17 +68,6 @@
                                     <constraint firstAttribute="width" constant="240" id="j7X-2x-KMi"/>
                                 </constraints>
                             </arscnView>
-                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mu4-1h-Ynh">
-                                <rect key="frame" x="167" y="237.5" width="333.5" height="187.5"/>
-                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="Mu4-1h-Ynh" secondAttribute="height" multiplier="16:9" id="LbL-AP-aj7"/>
-                                </constraints>
-                                <wkWebViewConfiguration key="configuration">
-                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
-                                    <wkPreferences key="preferences"/>
-                                </wkWebViewConfiguration>
-                            </wkWebView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -89,9 +78,7 @@
                             <constraint firstItem="Aps-3w-E0Z" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Aqo-5Q-Ig9"/>
                             <constraint firstAttribute="bottom" secondItem="UiB-P3-W3y" secondAttribute="bottom" id="BJa-kN-HAu"/>
                             <constraint firstItem="l1V-Kc-ToW" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="CZ7-KL-NAy"/>
-                            <constraint firstItem="Mu4-1h-Ynh" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="centerY" constant="50" id="Hk1-CC-LaG"/>
                             <constraint firstItem="Aps-3w-E0Z" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="1:2" id="InJ-dG-dic"/>
-                            <constraint firstItem="Mu4-1h-Ynh" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="1:2" id="MfC-Jc-OZg"/>
                             <constraint firstItem="l1V-Kc-ToW" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="1:4" id="Mti-Tt-pb2"/>
                             <constraint firstItem="UiB-P3-W3y" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Omn-GE-J02"/>
                             <constraint firstItem="XgV-ac-cQd" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="1:6" id="WQg-bE-FD8"/>
@@ -102,7 +89,6 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="nFZ-RF-rlg" secondAttribute="trailing" id="gjN-jm-Zma"/>
                             <constraint firstItem="UiB-P3-W3y" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="h81-6W-BrQ"/>
                             <constraint firstItem="l1V-Kc-ToW" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="oXJ-yB-RZG"/>
-                            <constraint firstItem="Mu4-1h-Ynh" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="pcA-Ue-Pay"/>
                             <constraint firstAttribute="trailing" secondItem="UiB-P3-W3y" secondAttribute="trailing" id="qOR-Ri-IOs"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Aps-3w-E0Z" secondAttribute="bottom" id="rkH-RQ-CTj"/>
                             <constraint firstItem="l1V-Kc-ToW" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="1:2" id="sVf-3O-OX8"/>
@@ -113,7 +99,6 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="gifプレビュー" destination="Mu4-1h-Ynh" id="GZF-sc-NLp"/>
                         <outlet property="pdfビュー" destination="UiB-P3-W3y" id="XuK-iT-t5I"/>
                         <outlet property="sceneビュー" destination="XCW-4m-L15" id="AU3-mj-1ny"/>
                     </connections>
