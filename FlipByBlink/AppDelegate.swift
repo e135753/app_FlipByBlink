@@ -38,14 +38,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         if let vc:ViewController = window?.rootViewController as? ViewController{
             if let d = PDFDocument(url: savePdfUrl){
-                vc.pdfビュー.autoScales = true
-                vc.pdfビュー.displayMode = .singlePage
-                vc.pdfビュー.backgroundColor = .clear
-                vc.pdfビュー.displaysPageBreaks = false
                 vc.pdfビュー.document = d
                 vc.pdfビュー.goToFirstPage(nil)
+                vc.pdfビュー.autoScales = true
+                vc.BGLabel.isHidden = true
             }
-            vc.view.backgroundColor = .black
         }
         return true
     }

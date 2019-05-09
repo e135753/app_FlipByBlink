@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -18,18 +18,24 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon" translatesAutoresizingMaskIntoConstraints="NO" id="EwX-uK-QDx">
-                                <rect key="frame" x="140.5" y="296.5" width="94" height="94"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="EwX-uK-QDx" secondAttribute="height" multiplier="1:1" id="Qas-0v-cJv"/>
-                                </constraints>
-                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="clip" numberOfLines="3" baselineAdjustment="alignBaselines" minimumScaleFactor="0.20000000298023224" translatesAutoresizingMaskIntoConstraints="NO" id="la2-fX-iVo" userLabel="Flip By Blink">
+                                <rect key="frame" x="-10" y="-10" width="395" height="707"/>
+                                <color key="backgroundColor" red="0.93323183060000003" green="0.93339174989999996" blue="0.93322181699999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <string key="text">Flip
+By
+Blink</string>
+                                <fontDescription key="fontDescription" type="system" weight="black" pointSize="300"/>
+                                <color key="textColor" red="0.1333333333" green="0.15686274510000001" blue="0.19215686269999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <size key="shadowOffset" width="0.0" height="2"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="EwX-uK-QDx" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="KqN-v4-goX"/>
-                            <constraint firstItem="EwX-uK-QDx" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="fPx-xT-NkJ"/>
-                            <constraint firstItem="EwX-uK-QDx" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" multiplier="1:4" id="mle-io-8ft"/>
+                            <constraint firstItem="la2-fX-iVo" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="1cB-IS-6TF"/>
+                            <constraint firstItem="la2-fX-iVo" firstAttribute="height" secondItem="Ze5-6b-2t3" secondAttribute="height" constant="40" id="9ba-a8-rvB"/>
+                            <constraint firstItem="la2-fX-iVo" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="Krc-Iy-LHM"/>
+                            <constraint firstItem="la2-fX-iVo" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" constant="20" id="pqc-BC-Ufa"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -39,7 +45,4 @@
             <point key="canvasLocation" x="53" y="375"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="icon" width="512" height="512"/>
-    </resources>
 </document>

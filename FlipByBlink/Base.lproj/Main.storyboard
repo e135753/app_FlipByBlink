@@ -18,28 +18,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="clip" numberOfLines="3" baselineAdjustment="alignBaselines" minimumScaleFactor="0.20000000298023224" translatesAutoresizingMaskIntoConstraints="NO" id="TWY-Ks-wWZ" userLabel="Flip By Blink">
+                                <rect key="frame" x="-10" y="-20" width="687" height="415"/>
+                                <color key="backgroundColor" red="0.93323183060000003" green="0.93339174989999996" blue="0.93322181699999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <string key="text">Flip
+By
+Blink</string>
+                                <fontDescription key="fontDescription" type="system" weight="black" pointSize="300"/>
+                                <color key="textColor" red="0.1333333333" green="0.15686274510000001" blue="0.19215686269999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <size key="shadowOffset" width="0.0" height="2"/>
+                            </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UiB-P3-W3y" userLabel="本ページ" customClass="PDFView">
                                 <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l1V-Kc-ToW" userLabel="前開いたPDF">
-                                <rect key="frame" x="167" y="0.0" width="333.5" height="94"/>
-                                <state key="normal" title="Button">
-                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="前回のPDFを開く:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6IE-Ql-9e0"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aps-3w-E0Z" userLabel="ピッカー">
-                                <rect key="frame" x="167" y="281.5" width="333.5" height="93.5"/>
-                                <state key="normal" title="Button">
-                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="pickerを呼び出す:" destination="BYZ-38-t0r" eventType="touchUpInside" id="38i-gD-KWj"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nFZ-RF-rlg">
                                 <rect key="frame" x="556" y="0.0" width="111" height="375"/>
                                 <gestureRecognizers/>
@@ -48,7 +41,6 @@
                                 </state>
                                 <connections>
                                     <action selector="nextページ:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gNl-A5-Dax"/>
-                                    <outletCollection property="gestureRecognizers" destination="40M-MW-7s4" appends="YES" id="d6a-rR-jfO"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XgV-ac-cQd">
@@ -59,7 +51,6 @@
                                 </state>
                                 <connections>
                                     <action selector="previousページ:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dPA-nm-hjA"/>
-                                    <outletCollection property="gestureRecognizers" destination="Q3v-iz-5V1" appends="YES" id="Nhl-uX-RGJ"/>
                                 </connections>
                             </button>
                             <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XCW-4m-L15">
@@ -69,18 +60,16 @@
                                 </constraints>
                             </arscnView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="Aps-3w-E0Z" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="1:4" id="2xR-sb-MUA"/>
-                            <constraint firstItem="UiB-P3-W3y" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="3H6-RR-h6V"/>
+                            <constraint firstItem="UiB-P3-W3y" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="3H6-RR-h6V"/>
                             <constraint firstItem="XgV-ac-cQd" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="6am-n8-rc0"/>
                             <constraint firstItem="nFZ-RF-rlg" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="7cK-h8-tvK"/>
-                            <constraint firstItem="Aps-3w-E0Z" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Aqo-5Q-Ig9"/>
-                            <constraint firstAttribute="bottom" secondItem="UiB-P3-W3y" secondAttribute="bottom" id="BJa-kN-HAu"/>
-                            <constraint firstItem="l1V-Kc-ToW" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="CZ7-KL-NAy"/>
-                            <constraint firstItem="Aps-3w-E0Z" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="1:2" id="InJ-dG-dic"/>
-                            <constraint firstItem="l1V-Kc-ToW" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="1:4" id="Mti-Tt-pb2"/>
-                            <constraint firstItem="UiB-P3-W3y" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Omn-GE-J02"/>
+                            <constraint firstItem="TWY-Ks-wWZ" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" constant="20" id="Fzh-Zw-edX"/>
+                            <constraint firstItem="TWY-Ks-wWZ" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" constant="40" id="LNn-IE-diR"/>
+                            <constraint firstItem="UiB-P3-W3y" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Omn-GE-J02"/>
+                            <constraint firstItem="UiB-P3-W3y" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="S4p-JB-FEg"/>
+                            <constraint firstItem="TWY-Ks-wWZ" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="WD2-3c-yUr"/>
+                            <constraint firstItem="TWY-Ks-wWZ" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="WIN-c0-7TK"/>
                             <constraint firstItem="XgV-ac-cQd" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="1:6" id="WQg-bE-FD8"/>
                             <constraint firstItem="XgV-ac-cQd" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Wnp-sv-pyQ"/>
                             <constraint firstItem="XCW-4m-L15" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="20" symbolic="YES" id="d0b-7y-Esj"/>
@@ -88,10 +77,6 @@
                             <constraint firstItem="nFZ-RF-rlg" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="1:6" id="g1I-h8-bqz"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="nFZ-RF-rlg" secondAttribute="trailing" id="gjN-jm-Zma"/>
                             <constraint firstItem="UiB-P3-W3y" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="h81-6W-BrQ"/>
-                            <constraint firstItem="l1V-Kc-ToW" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="oXJ-yB-RZG"/>
-                            <constraint firstAttribute="trailing" secondItem="UiB-P3-W3y" secondAttribute="trailing" id="qOR-Ri-IOs"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Aps-3w-E0Z" secondAttribute="bottom" id="rkH-RQ-CTj"/>
-                            <constraint firstItem="l1V-Kc-ToW" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="1:2" id="sVf-3O-OX8"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="XCW-4m-L15" secondAttribute="bottom" constant="227" id="sbC-77-gQP"/>
                             <constraint firstItem="nFZ-RF-rlg" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="vCx-TC-nTv"/>
                             <constraint firstItem="XgV-ac-cQd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="wbx-KA-R9o"/>
@@ -99,21 +84,12 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="BGLabel" destination="TWY-Ks-wWZ" id="CVf-g5-k2f"/>
                         <outlet property="pdfビュー" destination="UiB-P3-W3y" id="XuK-iT-t5I"/>
                         <outlet property="sceneビュー" destination="XCW-4m-L15" id="AU3-mj-1ny"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="40M-MW-7s4">
-                    <connections>
-                        <action selector="高速でページ進める:" destination="BYZ-38-t0r" id="BG7-XJ-07y"/>
-                    </connections>
-                </pongPressGestureRecognizer>
-                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="Q3v-iz-5V1">
-                    <connections>
-                        <action selector="高速でページ戻す:" destination="BYZ-38-t0r" id="cvU-lg-L9n"/>
-                    </connections>
-                </pongPressGestureRecognizer>
             </objects>
         </scene>
     </scenes>
