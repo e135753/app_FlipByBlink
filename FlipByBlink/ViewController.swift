@@ -1,5 +1,5 @@
-//諸設定
-//カメラプライバシ
+//====🛠setting⚙️====
+//CameraPrivacy
 //DocumentTypePDF
 //hiddenStatusBar
 //upSideDown
@@ -17,12 +17,12 @@ class ViewController: UIViewController,ARSessionDelegate,ARSCNViewDelegate,UIDoc
     
     var Ⓐ: ARSCNView!
     
-    var ex🌡👀: Double = 0.0
     var 🕰😑start: Date?
     var 🕰😑🔛: Date?
+    let 🎚😑sec: Double = 0.15
     
+    var ex🌡👀: Double = 0.0
     let 🎚👀: Double = 0.8
-    let 🎚😑time: Double = 0.15
         
     var not🗒yet: Bool = true
     
@@ -43,7 +43,6 @@ class ViewController: UIViewController,ARSessionDelegate,ARSCNViewDelegate,UIDoc
         📖.displaysPageBreaks = false
         📖.pageShadowsEnabled = true
         📖.isUserInteractionEnabled = false
-        
         if let 📍 = Bundle.main.url(forResource: "WELCOME", withExtension: "pdf") {
             if let 📘 = PDFDocument(url: 📍) {
                 📖.document = 📘
@@ -53,9 +52,7 @@ class ViewController: UIViewController,ARSessionDelegate,ARSCNViewDelegate,UIDoc
         
         Ⓐ.delegate = self
         Ⓐ.session.delegate = self
-        
         let 🎛 = ARFaceTrackingConfiguration()
-        
         Ⓐ.session.run(🎛, options: [.resetTracking, .removeExistingAnchors])
         Ⓐ.isHidden = true
         
@@ -83,7 +80,6 @@ class ViewController: UIViewController,ARSessionDelegate,ARSCNViewDelegate,UIDoc
         
         let 氵👌🏼 = UIPinchGestureRecognizer(target: self, action: #selector(self.🗒🗒🗒🗒(_:)))
         self.view.addGestureRecognizer(氵👌🏼)
-        
     }
     
     @objc func 🗒🗒🗒🗒(_ sender:UIPinchGestureRecognizer){
@@ -138,19 +134,17 @@ class ViewController: UIViewController,ARSessionDelegate,ARSCNViewDelegate,UIDoc
         ⒷⒼ.isHidden = true
         
         let 🗂 = FileManager.default
-        
         let 📍 = URL(string: 🗂.urls(for: .documentDirectory, in: .userDomainMask)[0].absoluteString + "OpenedPDF.pdf")!
         
         do{ try 🗂.removeItem(at: 📍)
-        }catch{ print("🤬") }
+        }catch{ print("👿") }
         
         do{ try 🗂.copyItem(at: urls.first!, to: 📍)
-        }catch{ print("🤬") }
+        }catch{ print("👿") }
     }
     
     func renderer(_ renderer: SCNSceneRenderer, didUpdate node: SCNNode, for anchor: ARAnchor) {
         guard let 🏷 = anchor as? ARFaceAnchor else { return }
-        
         let 🌡👀 = 🏷.blendShapes[.eyeBlinkLeft]?.doubleValue
         
         if 🌡👀! > 🎚👀 && ex🌡👀 < 🎚👀{
@@ -159,12 +153,11 @@ class ViewController: UIViewController,ARSessionDelegate,ARSCNViewDelegate,UIDoc
         
         if 🌡👀! > 🎚👀{
             🕰😑🔛 = Date()
-            if 🕰😑🔛!.timeIntervalSince(🕰😑start!) > TimeInterval(🎚😑time){
+            if 🕰😑🔛!.timeIntervalSince(🕰😑start!) > TimeInterval(🎚😑sec){
                 if not🗒yet{
                     DispatchQueue.main.async {
                         self.📖.goToNextPage(nil)
                     }
-                    
                     not🗒yet = false
                     DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                         self.not🗒yet = true
@@ -172,22 +165,20 @@ class ViewController: UIViewController,ARSessionDelegate,ARSCNViewDelegate,UIDoc
                 }
             }
         }
-        
         ex🌡👀 = 🌡👀!
-        
     }
     
     override var keyCommands: [UIKeyCommand]?{
-        let a = [UIKeyCommand(input: UIKeyCommand.inputRightArrow, modifierFlags: UIKeyModifierFlags.init(rawValue: 0), action: #selector(arrow🅁🗒(command:))),
-                        UIKeyCommand(input: UIKeyCommand.inputLeftArrow, modifierFlags: UIKeyModifierFlags.init(rawValue: 0), action: #selector(arrow🄻🗒🔙(command:)))]
+        let a = [UIKeyCommand(input: UIKeyCommand.inputRightArrow, modifierFlags: UIKeyModifierFlags.init(rawValue: 0), action: #selector(🗒arrow🅁key(command:))),
+                        UIKeyCommand(input: UIKeyCommand.inputLeftArrow, modifierFlags: UIKeyModifierFlags.init(rawValue: 0), action: #selector(🗒🔙arrow🄻key(command:)))]
         return a
     }
     
-    @objc func arrow🅁🗒(command: UIKeyCommand) {
+    @objc func 🗒arrow🅁key(command: UIKeyCommand) {
         📖.goToNextPage(nil)
     }
 
-    @objc func arrow🄻🗒🔙(command: UIKeyCommand) {
+    @objc func 🗒🔙arrow🄻key(command: UIKeyCommand) {
         📖.goToPreviousPage(nil)
     }
     

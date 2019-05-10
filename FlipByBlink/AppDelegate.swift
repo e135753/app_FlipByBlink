@@ -11,8 +11,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
-        print("url is ",url)
-        print("options is ",options)
+        print("🗣 url is ",url)
+        print("🗣 options is ",options)
         
         let ud = UIDocument(fileURL: url)
         
@@ -23,10 +23,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let 📍 = URL(string: 🗂.urls(for: .documentDirectory, in: .userDomainMask)[0].absoluteString + "OpenedPDF.pdf")!
 
         do{ try 🗂.removeItem(at: 📍)
-        }catch{ print("🤬") }
+        }catch{ print("👿") }
         
         do{ try 🗂.copyItem(at: url, to: 📍)
-        }catch{ print("🤬") }
+        }catch{ print("👿") }
 
         if let vc:ViewController = window?.rootViewController as? ViewController{
             if let 📘 = PDFDocument(url: 📍){
@@ -38,6 +38,4 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         return true
     }
-
 }
-
