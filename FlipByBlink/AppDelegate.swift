@@ -16,32 +16,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         print("urlは",url)
         print("optionsは",options)
         
-        let udoc = UIDocument(fileURL: url)
+        let ud = UIDocument(fileURL: url)
         
-        print(udoc)
+        print(ud)
         
-        let fm = FileManager.default
+        let 🗂 = FileManager.default
         
-        let savePdfUrl = URL(string: fm.urls(for: .documentDirectory, in: .userDomainMask)[0].absoluteString + "OpenedPDF.pdf")!
+        let 📍 = URL(string: 🗂.urls(for: .documentDirectory, in: .userDomainMask)[0].absoluteString + "OpenedPDF.pdf")!
 
-        do{
-            try fm.removeItem(at: savePdfUrl)
-        }catch{
-            print("前に開いたPDFを削除できなかった")
-        }
+        do{ try 🗂.removeItem(at: 📍)
+        }catch{ print("🤬") }
         
-        do{
-            try fm.copyItem(at: url, to: savePdfUrl)
-        }catch{
-            print("コピー失敗")
-        }
+        do{ try 🗂.copyItem(at: url, to: 📍)
+        }catch{ print("🤬") }
 
         if let vc:ViewController = window?.rootViewController as? ViewController{
-            if let d = PDFDocument(url: savePdfUrl){
-                vc.pdfビュー.document = d
-                vc.pdfビュー.goToFirstPage(nil)
-                vc.pdfビュー.autoScales = true
-                vc.BGLabel.isHidden = true
+            if let 📘 = PDFDocument(url: 📍){
+                vc.📖.document = 📘
+                vc.📖.goToFirstPage(nil)
+                vc.📖.autoScales = true
+                vc.🖼.isHidden = true
             }
         }
         return true
