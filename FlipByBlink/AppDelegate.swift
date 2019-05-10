@@ -6,15 +6,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
         return true
     }
 
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
-        print("urlは",url)
-        print("optionsは",options)
+        print("url is ",url)
+        print("options is ",options)
         
         let ud = UIDocument(fileURL: url)
         
@@ -35,7 +33,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 vc.📖.document = 📘
                 vc.📖.goToFirstPage(nil)
                 vc.📖.autoScales = true
-                vc.🖼.isHidden = true
+                vc.ⒷⒼ.isHidden = true
             }
         }
         return true

@@ -13,13 +13,13 @@ class ViewController: UIViewController,ARSessionDelegate,ARSCNViewDelegate,UIDoc
     
     @IBOutlet weak var 📖: PDFView!
     
-    @IBOutlet weak var 🖼: UILabel!
+    @IBOutlet weak var ⒷⒼ: UILabel!
     
-    var 🏙: ARSCNView!
+    var Ⓐ: ARSCNView!
     
-    var last🌡👀: Double = 0.0
+    var ex🌡👀: Double = 0.0
     var 🕰😑start: Date?
-    var 🕰😑yet: Date?
+    var 🕰😑🔛: Date?
     
     let 🎚👀: Double = 0.8
     let 🎚😑time: Double = 0.15
@@ -28,15 +28,15 @@ class ViewController: UIViewController,ARSessionDelegate,ARSCNViewDelegate,UIDoc
     
     override func viewDidLoad() {
         super .viewDidLoad()
-        🏙 = ARSCNView()
-        view.addSubview(🏙)
+        Ⓐ = ARSCNView()
+        view.addSubview(Ⓐ)
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
         🕰😑start = Date()
-        🕰😑yet = Date()
+        🕰😑🔛 = Date()
         
         📖.autoScales = true
         📖.displayMode = .singlePage
@@ -51,38 +51,38 @@ class ViewController: UIViewController,ARSessionDelegate,ARSCNViewDelegate,UIDoc
             }
         }
         
-        🏙.delegate = self
-        🏙.session.delegate = self
+        Ⓐ.delegate = self
+        Ⓐ.session.delegate = self
         
         let 🎛 = ARFaceTrackingConfiguration()
         
-        🏙.session.run(🎛, options: [.resetTracking, .removeExistingAnchors])
-        🏙.isHidden = true
+        Ⓐ.session.run(🎛, options: [.resetTracking, .removeExistingAnchors])
+        Ⓐ.isHidden = true
         
         UIApplication.shared.isIdleTimerDisabled = true
         
-        let 👆🏻三三 = UISwipeGestureRecognizer(target: self, action: #selector(self.🗒(_:)))
-        👆🏻三三.direction = .left
-        self.view.addGestureRecognizer(👆🏻三三)
+        let 👆🏼三三 = UISwipeGestureRecognizer(target: self, action: #selector(self.🗒(_:)))
+        👆🏼三三.direction = .left
+        self.view.addGestureRecognizer(👆🏼三三)
         
-        let 三三👆🏻 = UISwipeGestureRecognizer(target: self, action: #selector(self.🗒back(_:)))
-        三三👆🏻.direction = .right
-        self.view.addGestureRecognizer(三三👆🏻)
+        let 三三👆🏼 = UISwipeGestureRecognizer(target: self, action: #selector(self.🗒🔙(_:)))
+        三三👆🏼.direction = .right
+        self.view.addGestureRecognizer(三三👆🏼)
         
-        let 彡👆🏻ミ = UISwipeGestureRecognizer(target: self, action: #selector(self.pick📚(_:)))
-        彡👆🏻ミ.direction = .up
-        self.view.addGestureRecognizer(彡👆🏻ミ)
+        let 彡👆🏼ミ = UISwipeGestureRecognizer(target: self, action: #selector(self.📤📚(_:)))
+        彡👆🏼ミ.direction = .up
+        self.view.addGestureRecognizer(彡👆🏼ミ)
         
-        let ミ👆🏻彡 = UISwipeGestureRecognizer(target: self, action: #selector(self.📤last📘(_:)))
-        ミ👆🏻彡.direction = .down
-        self.view.addGestureRecognizer(ミ👆🏻彡)
+        let ミ👆🏼彡 = UISwipeGestureRecognizer(target: self, action: #selector(self.📤last📘(_:)))
+        ミ👆🏼彡.direction = .down
+        self.view.addGestureRecognizer(ミ👆🏼彡)
         
-        let tap🤘🏾 = UITapGestureRecognizer(target: self, action: #selector(self.play📺))
-        tap🤘🏾.numberOfTouchesRequired = 2
-        self.view.addGestureRecognizer(tap🤘🏾)
+        let 🤘🏼゛ = UITapGestureRecognizer(target: self, action: #selector(self.📺))
+        🤘🏼゛.numberOfTouchesRequired = 2
+        self.view.addGestureRecognizer(🤘🏼゛)
         
-        let 氵👌🏾 = UIPinchGestureRecognizer(target: self, action: #selector(self.🗒🗒🗒🗒(_:)))
-        self.view.addGestureRecognizer(氵👌🏾)
+        let 氵👌🏼 = UIPinchGestureRecognizer(target: self, action: #selector(self.🗒🗒🗒🗒(_:)))
+        self.view.addGestureRecognizer(氵👌🏼)
         
     }
     
@@ -103,7 +103,7 @@ class ViewController: UIViewController,ARSessionDelegate,ARSCNViewDelegate,UIDoc
         📖.goToNextPage(nil)
     }
     
-    @IBAction func 🗒back(_ sender: Any) {
+    @IBAction func 🗒🔙(_ sender: Any) {
         📖.goToPreviousPage(nil)
     }
     
@@ -114,16 +114,16 @@ class ViewController: UIViewController,ARSessionDelegate,ARSCNViewDelegate,UIDoc
             📖.document = 📘
             📖.goToFirstPage(nil)
         }
-        🖼.isHidden = true
+        ⒷⒼ.isHidden = true
     }
     
-    @objc func pick📚(_ sender: Any) {
+    @objc func 📤📚(_ sender: Any) {
         let 👩🏻‍💻 = UIDocumentPickerViewController(documentTypes: ["com.adobe.pdf"], in: .import)
         👩🏻‍💻.delegate = self
         self.present(👩🏻‍💻, animated: true, completion: nil)
     }
     
-    @objc func play📺(){
+    @objc func 📺(){
         guard let 📍 = Bundle.main.url(forResource: "demo", withExtension: "mp4") else {return}
         let 🎞 = AVPlayer(url: 📍)
         let 👩🏻‍💻 = AVPlayerViewController()
@@ -135,7 +135,7 @@ class ViewController: UIViewController,ARSessionDelegate,ARSCNViewDelegate,UIDoc
         📖.autoScales = true
         📖.document = PDFDocument(url: urls.first!)
         📖.goToFirstPage(nil)
-        🖼.isHidden = true
+        ⒷⒼ.isHidden = true
         
         let 🗂 = FileManager.default
         
@@ -153,12 +153,13 @@ class ViewController: UIViewController,ARSessionDelegate,ARSCNViewDelegate,UIDoc
         
         let 🌡👀 = 🏷.blendShapes[.eyeBlinkLeft]?.doubleValue
         
-        if 🌡👀! > 🎚👀 && last🌡👀 < 🎚👀{
+        if 🌡👀! > 🎚👀 && ex🌡👀 < 🎚👀{
             🕰😑start = Date()
         }
+        
         if 🌡👀! > 🎚👀{
-            🕰😑yet = Date()
-            if 🕰😑yet!.timeIntervalSince(🕰😑start!) > TimeInterval(🎚😑time){
+            🕰😑🔛 = Date()
+            if 🕰😑🔛!.timeIntervalSince(🕰😑start!) > TimeInterval(🎚😑time){
                 if not🗒yet{
                     DispatchQueue.main.async {
                         self.📖.goToNextPage(nil)
@@ -172,21 +173,21 @@ class ViewController: UIViewController,ARSessionDelegate,ARSCNViewDelegate,UIDoc
             }
         }
         
-        last🌡👀 = 🌡👀!
+        ex🌡👀 = 🌡👀!
         
     }
     
     override var keyCommands: [UIKeyCommand]?{
-        let a = [UIKeyCommand(input: UIKeyCommand.inputRightArrow, modifierFlags: UIKeyModifierFlags.init(rawValue: 0), action: #selector(🎹RightArrow🗒(command:))),
-                        UIKeyCommand(input: UIKeyCommand.inputLeftArrow, modifierFlags: UIKeyModifierFlags.init(rawValue: 0), action: #selector(🎹LeftArrow🗒back(command:)))]
+        let a = [UIKeyCommand(input: UIKeyCommand.inputRightArrow, modifierFlags: UIKeyModifierFlags.init(rawValue: 0), action: #selector(arrow🅁🗒(command:))),
+                        UIKeyCommand(input: UIKeyCommand.inputLeftArrow, modifierFlags: UIKeyModifierFlags.init(rawValue: 0), action: #selector(arrow🄻🗒🔙(command:)))]
         return a
     }
     
-    @objc func 🎹RightArrow🗒(command: UIKeyCommand) {
+    @objc func arrow🅁🗒(command: UIKeyCommand) {
         📖.goToNextPage(nil)
     }
 
-    @objc func 🎹LeftArrow🗒back(command: UIKeyCommand) {
+    @objc func arrow🄻🗒🔙(command: UIKeyCommand) {
         📖.goToPreviousPage(nil)
     }
     

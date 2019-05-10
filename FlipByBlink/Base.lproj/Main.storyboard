@@ -50,7 +50,7 @@ Blink</string>
                                     <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="🗒back:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Wqd-Op-3IQ"/>
+                                    <action selector="🗒🔙:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Wqd-Op-3IQ"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -75,8 +75,8 @@ Blink</string>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="ⒷⒼ" destination="TWY-Ks-wWZ" id="CVf-g5-k2f"/>
                         <outlet property="📖" destination="UiB-P3-W3y" id="XuK-iT-t5I"/>
-                        <outlet property="🖼" destination="TWY-Ks-wWZ" id="CVf-g5-k2f"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
