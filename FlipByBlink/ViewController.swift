@@ -145,13 +145,13 @@ class ViewController: UIViewController,ARSessionDelegate,ARSCNViewDelegate,UIDoc
     
     func renderer(_ renderer: SCNSceneRenderer, didUpdate node: SCNNode, for anchor: ARAnchor) {
         guard let 🏷 = anchor as? ARFaceAnchor else { return }
-        let 🌡👀 = 🏷.blendShapes[.eyeBlinkLeft]?.doubleValue
+        guard let 🌡👀 = 🏷.blendShapes[.eyeBlinkLeft]?.doubleValue else { return }
         
-        if 🌡👀! > 🎚👀 && ex🌡👀 < 🎚👀{
+        if 🌡👀 > 🎚👀 && ex🌡👀 < 🎚👀{
             🕰😑start = Date()
         }
         
-        if 🌡👀! > 🎚👀{
+        if 🌡👀 > 🎚👀{
             🕰😑🔛 = Date()
             if 🕰😑🔛!.timeIntervalSince(🕰😑start!) > TimeInterval(🎚😑sec){
                 if not🗒yet{
@@ -165,7 +165,7 @@ class ViewController: UIViewController,ARSessionDelegate,ARSCNViewDelegate,UIDoc
                 }
             }
         }
-        ex🌡👀 = 🌡👀!
+        ex🌡👀 = 🌡👀
     }
     
     override var keyCommands: [UIKeyCommand]?{
