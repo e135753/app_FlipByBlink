@@ -33,7 +33,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 vc.📖.document = 📘
                 vc.📖.goToFirstPage(nil)
                 vc.📖.autoScales = true
-                vc.ⒷⒼ.isHidden = true
             }
         }
         return true

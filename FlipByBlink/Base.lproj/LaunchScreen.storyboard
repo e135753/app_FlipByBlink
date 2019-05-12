@@ -18,24 +18,49 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="clip" numberOfLines="3" baselineAdjustment="alignBaselines" minimumScaleFactor="0.20000000298023224" translatesAutoresizingMaskIntoConstraints="NO" id="la2-fX-iVo" userLabel="Flip By Blink">
-                                <rect key="frame" x="-10" y="-10" width="395" height="707"/>
-                                <color key="backgroundColor" red="0.93323183060000003" green="0.93339174989999996" blue="0.93322181699999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <string key="text">Flip
-By
-Blink</string>
-                                <fontDescription key="fontDescription" type="system" weight="black" pointSize="300"/>
-                                <color key="textColor" red="0.1333333333" green="0.15686274510000001" blue="0.19215686269999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                                <size key="shadowOffset" width="0.0" height="2"/>
-                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="rfd-ww-HQ4">
+                                <rect key="frame" x="30" y="30" width="315" height="607"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fBBiCONrENEW" translatesAutoresizingMaskIntoConstraints="NO" id="KML-D4-3FQ" userLabel="icon">
+                                <rect key="frame" x="60" y="565" width="72" height="72"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="72" id="rYe-EL-wgy"/>
+                                    <constraint firstAttribute="width" constant="72" id="wFo-Hb-Lxo"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="yOw-8O-nEx" userLabel="📁">
+                                <rect key="frame" x="147" y="561" width="76" height="76"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="76" id="KaX-kc-Hot"/>
+                                    <constraint firstAttribute="width" constant="76" id="pEZ-K6-a6k"/>
+                                </constraints>
+                                <state key="normal" image="filerIconPdfForLaunch">
+                                    <color key="titleColor" red="0.22352941179999999" green="0.24313725489999999" blue="0.27450980390000002" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="ehl-3f-Hsa" userLabel="sample">
+                                <rect key="frame" x="239" y="561" width="76" height="76"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="76" id="842-QE-QOX"/>
+                                    <constraint firstAttribute="width" constant="76" id="sVi-rU-zZt"/>
+                                </constraints>
+                                <state key="normal" image="sampleIconForLaunch">
+                                    <color key="titleColor" red="0.22352941179999999" green="0.24313725489999999" blue="0.27450980390000002" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.93323183060000003" green="0.93339174989999996" blue="0.93322181699999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="la2-fX-iVo" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="1cB-IS-6TF"/>
-                            <constraint firstItem="la2-fX-iVo" firstAttribute="height" secondItem="Ze5-6b-2t3" secondAttribute="height" constant="40" id="9ba-a8-rvB"/>
-                            <constraint firstItem="la2-fX-iVo" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="Krc-Iy-LHM"/>
-                            <constraint firstItem="la2-fX-iVo" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" constant="20" id="pqc-BC-Ufa"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ehl-3f-Hsa" secondAttribute="trailing" constant="60" id="27P-R7-r44"/>
+                            <constraint firstItem="rfd-ww-HQ4" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="6WK-vg-7u4"/>
+                            <constraint firstItem="rfd-ww-HQ4" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" constant="-60" id="6vJ-9b-l9q"/>
+                            <constraint firstAttribute="bottom" secondItem="yOw-8O-nEx" secondAttribute="bottom" constant="30" id="CNB-c6-bfG"/>
+                            <constraint firstItem="rfd-ww-HQ4" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="JbE-U7-gQH"/>
+                            <constraint firstItem="KML-D4-3FQ" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" constant="60" id="Oho-5R-zbb"/>
+                            <constraint firstItem="rfd-ww-HQ4" firstAttribute="height" secondItem="Ze5-6b-2t3" secondAttribute="height" constant="-60" id="fi8-Zv-eva"/>
+                            <constraint firstAttribute="trailing" secondItem="yOw-8O-nEx" secondAttribute="trailing" constant="152" id="o9G-0n-XA5"/>
+                            <constraint firstAttribute="bottom" secondItem="ehl-3f-Hsa" secondAttribute="bottom" constant="30" id="qWf-6S-dll"/>
+                            <constraint firstAttribute="bottom" secondItem="KML-D4-3FQ" secondAttribute="bottom" constant="30" id="uPt-0Y-8Zx"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -45,4 +70,10 @@ Blink</string>
             <point key="canvasLocation" x="53" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="bg" width="512" height="512"/>
+        <image name="fBBiCONrENEW" width="512" height="512"/>
+        <image name="filerIconPdfForLaunch" width="512" height="512"/>
+        <image name="sampleIconForLaunch" width="512" height="512"/>
+    </resources>
 </document>

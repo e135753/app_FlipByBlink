@@ -13,12 +13,12 @@ class ViewController: UIViewController,ARSessionDelegate,ARSCNViewDelegate,UIDoc
     
     @IBOutlet weak var 📖: PDFView!
     
-    @IBOutlet weak var ⒷⒼ: UILabel!
+    @IBOutlet weak var 📺🏷: UIButton!
     
     var Ⓐ: ARSCNView!
     
-    var 🕰😑start: Date?
-    var 🕰😑🔛: Date?
+    var 🕰😑start: Date!
+    var 🕰😑🔛: Date!
     let 🎚😑sec: Double = 0.15
     
     var ex🌡👀: Double = 0.0
@@ -49,6 +49,7 @@ class ViewController: UIViewController,ARSessionDelegate,ARSCNViewDelegate,UIDoc
                 📖.goToFirstPage(nil)
             }
         }
+        📖.isHidden = true
         
         Ⓐ.delegate = self
         Ⓐ.session.delegate = self
@@ -70,22 +71,26 @@ class ViewController: UIViewController,ARSessionDelegate,ARSCNViewDelegate,UIDoc
         彡👆🏼ミ.direction = .up
         self.view.addGestureRecognizer(彡👆🏼ミ)
         
-        let ミ👆🏼彡 = UISwipeGestureRecognizer(target: self, action: #selector(self.📤last📘(_:)))
-        ミ👆🏼彡.direction = .down
-        self.view.addGestureRecognizer(ミ👆🏼彡)
-        
-        let 🤘🏼゛ = UITapGestureRecognizer(target: self, action: #selector(self.📺))
-        🤘🏼゛.numberOfTouchesRequired = 2
-        self.view.addGestureRecognizer(🤘🏼゛)
-        
-        let 氵👌🏼 = UIPinchGestureRecognizer(target: self, action: #selector(self.🗒🗒🗒🗒(_:)))
+        let 氵👌🏼 = UIPinchGestureRecognizer(target: self, action: #selector(self.🗒🗒🗒🗒or📤📘🔖(_:)))
         self.view.addGestureRecognizer(氵👌🏼)
     }
     
-    @objc func 🗒🗒🗒🗒(_ sender:UIPinchGestureRecognizer){
+    @objc func 🗒🗒🗒🗒or📤📘🔖(_ sender:UIPinchGestureRecognizer){
         if sender.velocity > 0 {
             📖.goToNextPage(nil)
         }else{
+            if sender.state == .began{
+                if 📖.document!.index(for: 📖.currentPage!) == 0{
+                    let 🗂 = FileManager.default
+                    if let 📘 = PDFDocument(url: URL(string: 🗂.urls(for: .documentDirectory, in: .userDomainMask)[0].absoluteString + "OpenedPDF.pdf")!){
+                        📖.autoScales = true
+                        📖.document = 📘
+                        📖.goToFirstPage(nil)
+                    }
+                }else{
+                    return
+                }
+            }
             📖.goToPreviousPage(nil)
         }
     }
@@ -103,23 +108,13 @@ class ViewController: UIViewController,ARSessionDelegate,ARSCNViewDelegate,UIDoc
         📖.goToPreviousPage(nil)
     }
     
-    @objc func 📤last📘(_ sender: Any) {
-        let 🗂 = FileManager.default
-        if let 📘 = PDFDocument(url: URL(string: 🗂.urls(for: .documentDirectory, in: .userDomainMask)[0].absoluteString + "OpenedPDF.pdf")!){
-            📖.autoScales = true
-            📖.document = 📘
-            📖.goToFirstPage(nil)
-        }
-        ⒷⒼ.isHidden = true
-    }
-    
     @objc func 📤📚(_ sender: Any) {
         let 👩🏻‍💻 = UIDocumentPickerViewController(documentTypes: ["com.adobe.pdf"], in: .import)
         👩🏻‍💻.delegate = self
         self.present(👩🏻‍💻, animated: true, completion: nil)
     }
     
-    @objc func 📺(){
+    @IBAction func 📺(_ sender: Any) {
         guard let 📍 = Bundle.main.url(forResource: "demo", withExtension: "mp4") else {return}
         let 🎞 = AVPlayer(url: 📍)
         let 👩🏻‍💻 = AVPlayerViewController()
@@ -131,7 +126,6 @@ class ViewController: UIViewController,ARSessionDelegate,ARSCNViewDelegate,UIDoc
         📖.autoScales = true
         📖.document = PDFDocument(url: urls.first!)
         📖.goToFirstPage(nil)
-        ⒷⒼ.isHidden = true
         
         let 🗂 = FileManager.default
         let 📍 = URL(string: 🗂.urls(for: .documentDirectory, in: .userDomainMask)[0].absoluteString + "OpenedPDF.pdf")!
@@ -153,7 +147,7 @@ class ViewController: UIViewController,ARSessionDelegate,ARSCNViewDelegate,UIDoc
         
         if 🌡👀 > 🎚👀{
             🕰😑🔛 = Date()
-            if 🕰😑🔛!.timeIntervalSince(🕰😑start!) > TimeInterval(🎚😑sec){
+            if 🕰😑🔛.timeIntervalSince(🕰😑start) > TimeInterval(🎚😑sec){
                 if not🗒yet{
                     DispatchQueue.main.async {
                         self.📖.goToNextPage(nil)
