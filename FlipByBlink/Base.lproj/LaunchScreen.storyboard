@@ -19,27 +19,27 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="rfd-ww-HQ4">
-                                <rect key="frame" x="30" y="30" width="315" height="607"/>
+                                <rect key="frame" x="60" y="60" width="250" height="333.5"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fBBiCONrENEW" translatesAutoresizingMaskIntoConstraints="NO" id="KML-D4-3FQ" userLabel="icon">
-                                <rect key="frame" x="60" y="565" width="72" height="72"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sampleIconForLaunch" translatesAutoresizingMaskIntoConstraints="NO" id="KML-D4-3FQ" userLabel="icon">
+                                <rect key="frame" x="239" y="531" width="76" height="76"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="72" id="rYe-EL-wgy"/>
-                                    <constraint firstAttribute="width" constant="72" id="wFo-Hb-Lxo"/>
+                                    <constraint firstAttribute="height" constant="76" id="rYe-EL-wgy"/>
+                                    <constraint firstAttribute="width" constant="76" id="wFo-Hb-Lxo"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="yOw-8O-nEx" userLabel="📁">
-                                <rect key="frame" x="147" y="561" width="76" height="76"/>
+                                <rect key="frame" x="71" y="455" width="152" height="152"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="76" id="KaX-kc-Hot"/>
-                                    <constraint firstAttribute="width" constant="76" id="pEZ-K6-a6k"/>
+                                    <constraint firstAttribute="height" constant="152" id="KaX-kc-Hot"/>
+                                    <constraint firstAttribute="width" constant="152" id="pEZ-K6-a6k"/>
                                 </constraints>
                                 <state key="normal" image="filerIconPdfForLaunch">
                                     <color key="titleColor" red="0.22352941179999999" green="0.24313725489999999" blue="0.27450980390000002" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="ehl-3f-Hsa" userLabel="sample">
-                                <rect key="frame" x="239" y="561" width="76" height="76"/>
+                                <rect key="frame" x="239" y="469" width="76" height="76"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="76" id="842-QE-QOX"/>
                                     <constraint firstAttribute="width" constant="76" id="sVi-rU-zZt"/>
@@ -52,15 +52,15 @@
                         <color key="backgroundColor" red="0.93323183060000003" green="0.93339174989999996" blue="0.93322181699999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ehl-3f-Hsa" secondAttribute="trailing" constant="60" id="27P-R7-r44"/>
-                            <constraint firstItem="rfd-ww-HQ4" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="6WK-vg-7u4"/>
-                            <constraint firstItem="rfd-ww-HQ4" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" constant="-60" id="6vJ-9b-l9q"/>
-                            <constraint firstAttribute="bottom" secondItem="yOw-8O-nEx" secondAttribute="bottom" constant="30" id="CNB-c6-bfG"/>
-                            <constraint firstItem="rfd-ww-HQ4" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="JbE-U7-gQH"/>
-                            <constraint firstItem="KML-D4-3FQ" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" constant="60" id="Oho-5R-zbb"/>
-                            <constraint firstItem="rfd-ww-HQ4" firstAttribute="height" secondItem="Ze5-6b-2t3" secondAttribute="height" constant="-60" id="fi8-Zv-eva"/>
+                            <constraint firstItem="rfd-ww-HQ4" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" constant="60" id="6WK-vg-7u4"/>
+                            <constraint firstItem="rfd-ww-HQ4" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" multiplier="2:3" id="6vJ-9b-l9q"/>
+                            <constraint firstAttribute="bottom" secondItem="yOw-8O-nEx" secondAttribute="bottom" constant="60" id="CNB-c6-bfG"/>
+                            <constraint firstItem="rfd-ww-HQ4" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" constant="60" id="JbE-U7-gQH"/>
+                            <constraint firstItem="KML-D4-3FQ" firstAttribute="trailing" secondItem="Ze5-6b-2t3" secondAttribute="trailing" constant="-60" id="Oho-5R-zbb"/>
+                            <constraint firstItem="rfd-ww-HQ4" firstAttribute="height" secondItem="Ze5-6b-2t3" secondAttribute="height" multiplier="1:2" id="fi8-Zv-eva"/>
                             <constraint firstAttribute="trailing" secondItem="yOw-8O-nEx" secondAttribute="trailing" constant="152" id="o9G-0n-XA5"/>
-                            <constraint firstAttribute="bottom" secondItem="ehl-3f-Hsa" secondAttribute="bottom" constant="30" id="qWf-6S-dll"/>
-                            <constraint firstAttribute="bottom" secondItem="KML-D4-3FQ" secondAttribute="bottom" constant="30" id="uPt-0Y-8Zx"/>
+                            <constraint firstAttribute="bottom" secondItem="ehl-3f-Hsa" secondAttribute="bottom" constant="122" id="qWf-6S-dll"/>
+                            <constraint firstAttribute="bottom" secondItem="KML-D4-3FQ" secondAttribute="bottom" constant="60" id="uPt-0Y-8Zx"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -72,7 +72,6 @@
     </scenes>
     <resources>
         <image name="bg" width="512" height="512"/>
-        <image name="fBBiCONrENEW" width="512" height="512"/>
         <image name="filerIconPdfForLaunch" width="512" height="512"/>
         <image name="sampleIconForLaunch" width="512" height="512"/>
     </resources>

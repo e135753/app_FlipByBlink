@@ -2,11 +2,11 @@
   "images" : [
     {
       "idiom" : "universal",
+      "filename" : "filerIconPdf.pdf",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "filerIconPdf.pdf",
       "scale" : "2x"
     },
     {

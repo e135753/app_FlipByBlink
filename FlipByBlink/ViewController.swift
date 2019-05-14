@@ -11,106 +11,83 @@ import AVKit
 
 class ViewController: UIViewController,ARSessionDelegate,ARSCNViewDelegate,UIDocumentPickerDelegate {
     
-    @IBOutlet weak var 📖: PDFView!
+    @IBOutlet weak var pdfC: UIImageView!
     
-    @IBOutlet weak var 📺🏷: UIButton!
+    @IBOutlet weak var readPdf: UIButton!
     
-    var Ⓐ: ARSCNView!
-    
-    var 🕰😑start: Date!
-    var 🕰😑🔛: Date!
-    let 🎚😑sec: Double = 0.15
-    
-    var ex🌡👀: Double = 0.0
-    let 🎚👀: Double = 0.8
-        
-    var not🗒yet: Bool = true
-    
+    //    var Ⓐ: ARSCNView!
+
+//    var 🕰😑start: Date!
+//    var 🕰😑🔛: Date!
+//    let 🎚😑sec: Double = 0.15
+//
+//    var ex🌡👀: Double = 0.0
+//    let 🎚👀: Double = 0.8
+//
+//    var not🗒yet: Bool = true
+//
     override func viewDidLoad() {
         super .viewDidLoad()
-        Ⓐ = ARSCNView()
-        view.addSubview(Ⓐ)
+//        Ⓐ = ARSCNView()
+//        view.addSubview(Ⓐ)
+//        Ⓐ.delegate = self
+//        Ⓐ.session.delegate = self
+//        let 🎛 = ARFaceTrackingConfiguration()
+//        Ⓐ.session.run(🎛, options: [.resetTracking, .removeExistingAnchors])
+//        Ⓐ.stop(nil)
+        pdfC.transform = .init(rotationAngle: 0.3)
+        readPdf.transform = .init(rotationAngle: 0.3)
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        🕰😑start = Date()
-        🕰😑🔛 = Date()
+//        🕰😑start = Date()
+//        🕰😑🔛 = Date()
+//
+//        📖.autoScales = true
+//        📖.displayMode = .singlePage
+//        📖.displaysPageBreaks = false
+//        📖.pageShadowsEnabled = true
+//        📖.isUserInteractionEnabled = false
+//        if let 📍 = Bundle.main.url(forResource: "WELCOME", withExtension: "pdf") {
+//            if let 📘 = PDFDocument(url: 📍) {
+//                📖.document = 📘
+//                📖.goToFirstPage(nil)
+//            }
+//        }
+//        📖.isHidden = true
         
-        📖.autoScales = true
-        📖.displayMode = .singlePage
-        📖.displaysPageBreaks = false
-        📖.pageShadowsEnabled = true
-        📖.isUserInteractionEnabled = false
-        if let 📍 = Bundle.main.url(forResource: "WELCOME", withExtension: "pdf") {
-            if let 📘 = PDFDocument(url: 📍) {
-                📖.document = 📘
-                📖.goToFirstPage(nil)
-            }
-        }
-        📖.isHidden = true
-        
-        Ⓐ.delegate = self
-        Ⓐ.session.delegate = self
-        let 🎛 = ARFaceTrackingConfiguration()
-        Ⓐ.session.run(🎛, options: [.resetTracking, .removeExistingAnchors])
-        Ⓐ.isHidden = true
+//        Ⓐ.delegate = self
+//        Ⓐ.session.delegate = self
+//        let 🎛 = ARFaceTrackingConfiguration()
+//        Ⓐ.session.run(🎛, options: [.resetTracking, .removeExistingAnchors])
+//        Ⓐ.stop(nil)
         
         UIApplication.shared.isIdleTimerDisabled = true
-        
-        let 👆🏼三三 = UISwipeGestureRecognizer(target: self, action: #selector(self.🗒(_:)))
-        👆🏼三三.direction = .left
-        self.view.addGestureRecognizer(👆🏼三三)
-        
-        let 三三👆🏼 = UISwipeGestureRecognizer(target: self, action: #selector(self.🗒🔙(_:)))
-        三三👆🏼.direction = .right
-        self.view.addGestureRecognizer(三三👆🏼)
-        
-        let 彡👆🏼ミ = UISwipeGestureRecognizer(target: self, action: #selector(self.📤📚(_:)))
-        彡👆🏼ミ.direction = .up
-        self.view.addGestureRecognizer(彡👆🏼ミ)
-        
-        let 氵👌🏼 = UIPinchGestureRecognizer(target: self, action: #selector(self.🗒🗒🗒🗒or📤📘🔖(_:)))
-        self.view.addGestureRecognizer(氵👌🏼)
     }
     
-    @objc func 🗒🗒🗒🗒or📤📘🔖(_ sender:UIPinchGestureRecognizer){
-        if sender.velocity > 0 {
-            📖.goToNextPage(nil)
-        }else{
-            if sender.state == .began{
-                if 📖.document!.index(for: 📖.currentPage!) == 0{
-                    let 🗂 = FileManager.default
-                    if let 📘 = PDFDocument(url: URL(string: 🗂.urls(for: .documentDirectory, in: .userDomainMask)[0].absoluteString + "OpenedPDF.pdf")!){
-                        📖.autoScales = true
-                        📖.document = 📘
-                        📖.goToFirstPage(nil)
-                    }
-                }else{
-                    return
-                }
-            }
-            📖.goToPreviousPage(nil)
-        }
-    }
+//    @objc func 🗒🗒🗒🗒or📤📘🔖(_ sender:UIPinchGestureRecognizer){
+//        if sender.velocity < 0 {
+//            if sender.state == .began{
+//                if 📖.document!.index(for: 📖.currentPage!) == 0{
+//                    let 🗂 = FileManager.default
+//                    if let 📘 = PDFDocument(url: URL(string: 🗂.urls(for: .documentDirectory, in: .userDomainMask)[0].absoluteString + "OpenedPDF.pdf")!){
+//                        📖.autoScales = true
+//                        📖.document = 📘
+//                        📖.goToFirstPage(nil)
+//                    }
+//                }else{
+//                    return
+//                }
+//            }
+//        }
+//    }
     
-    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
-        super.viewWillTransition(to: size, with: coordinator)
-        📖.autoScales = true
-    }
-
-    @IBAction func 🗒(_ sender: Any) {
-        📖.goToNextPage(nil)
-    }
-    
-    @IBAction func 🗒🔙(_ sender: Any) {
-        📖.goToPreviousPage(nil)
-    }
-    
-    @objc func 📤📚(_ sender: Any) {
+    @IBAction func 📁(_ sender: Any) {
         let 👩🏻‍💻 = UIDocumentPickerViewController(documentTypes: ["com.adobe.pdf"], in: .import)
         👩🏻‍💻.delegate = self
+        👩🏻‍💻.modalPresentationStyle = .fullScreen
         self.present(👩🏻‍💻, animated: true, completion: nil)
     }
     
@@ -123,63 +100,50 @@ class ViewController: UIViewController,ARSessionDelegate,ARSCNViewDelegate,UIDoc
     }
     
     func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
-        📖.autoScales = true
-        📖.document = PDFDocument(url: urls.first!)
-        📖.goToFirstPage(nil)
-        
+
         let 🗂 = FileManager.default
         let 📍 = URL(string: 🗂.urls(for: .documentDirectory, in: .userDomainMask)[0].absoluteString + "OpenedPDF.pdf")!
         
+        if let 📘 = PDFDocument(url: 📍) {
+            pdfC.image = 📘.page(at: 0)?.thumbnail(of: CGSize(width: 450, height: 450), for: .artBox)
+        }
+        
         do{ try 🗂.removeItem(at: 📍)
         }catch{ print("👿") }
-        
+
         do{ try 🗂.copyItem(at: urls.first!, to: 📍)
         }catch{ print("👿") }
     }
-    
-    func renderer(_ renderer: SCNSceneRenderer, didUpdate node: SCNNode, for anchor: ARAnchor) {
-        guard let 🏷 = anchor as? ARFaceAnchor else { return }
-        guard let 🌡👀 = 🏷.blendShapes[.eyeBlinkLeft]?.doubleValue else { return }
-        
-        if 🌡👀 > 🎚👀 && ex🌡👀 < 🎚👀{
-            🕰😑start = Date()
-        }
-        
-        if 🌡👀 > 🎚👀{
-            🕰😑🔛 = Date()
-            if 🕰😑🔛.timeIntervalSince(🕰😑start) > TimeInterval(🎚😑sec){
-                if not🗒yet{
-                    DispatchQueue.main.async {
-                        self.📖.goToNextPage(nil)
-                    }
-                    not🗒yet = false
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                        self.not🗒yet = true
-                    }
-                }
-            }
-        }
-        ex🌡👀 = 🌡👀
-    }
-    
-    override var keyCommands: [UIKeyCommand]?{
-        let a = [UIKeyCommand(input: UIKeyCommand.inputRightArrow, modifierFlags: UIKeyModifierFlags.init(rawValue: 0), action: #selector(🗒arrow🅁key(command:))),
-                        UIKeyCommand(input: UIKeyCommand.inputLeftArrow, modifierFlags: UIKeyModifierFlags.init(rawValue: 0), action: #selector(🗒🔙arrow🄻key(command:)))]
-        return a
-    }
-    
-    @objc func 🗒arrow🅁key(command: UIKeyCommand) {
-        📖.goToNextPage(nil)
-    }
-
-    @objc func 🗒🔙arrow🄻key(command: UIKeyCommand) {
-        📖.goToPreviousPage(nil)
-    }
-    
+//
+//    func renderer(_ renderer: SCNSceneRenderer, didUpdate node: SCNNode, for anchor: ARAnchor) {
+//        guard let 🏷 = anchor as? ARFaceAnchor else { return }
+//        guard let 🌡👀 = 🏷.blendShapes[.eyeBlinkLeft]?.doubleValue else { return }
+//
+//        if 🌡👀 > 🎚👀 && ex🌡👀 < 🎚👀{
+//            🕰😑start = Date()
+//        }
+//
+//        if 🌡👀 > 🎚👀{
+//            🕰😑🔛 = Date()
+//            if 🕰😑🔛.timeIntervalSince(🕰😑start) > TimeInterval(🎚😑sec){
+//                if not🗒yet{
+//                    DispatchQueue.main.async {
+//                        self.📖.goToNextPage(nil)
+//                    }
+//                    not🗒yet = false
+//                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+//                        self.not🗒yet = true
+//                    }
+//                }
+//            }
+//        }
+//        ex🌡👀 = 🌡👀
+//    }
+//
     override var prefersHomeIndicatorAutoHidden: Bool {
         return true
     }
-    
+
     override var prefersStatusBarHidden: Bool{
         return true
     }

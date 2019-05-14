@@ -2,11 +2,11 @@
   "images" : [
     {
       "idiom" : "universal",
+      "filename" : "sampleIconForLaunch-1.pdf",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "sampleIconForLaunch.pdf",
       "scale" : "2x"
     },
     {
