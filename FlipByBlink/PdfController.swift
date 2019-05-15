@@ -83,6 +83,14 @@ class PdfController: UIViewController,ARSessionDelegate,ARSCNViewDelegate {
         }
     }
     
+    @IBAction func 🀲👆🏼゛(_ sender: Any) {
+        🗒()
+    }
+    
+    @IBAction func 🀸👆🏼゛(_ sender: Any) {
+        🗒🔙()
+    }
+    
     func renderer(_ renderer: SCNSceneRenderer, didUpdate node: SCNNode, for anchor: ARAnchor) {
         
         DispatchQueue.main.async {

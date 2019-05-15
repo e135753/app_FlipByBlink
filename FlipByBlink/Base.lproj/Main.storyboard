@@ -125,16 +125,38 @@
                                     <constraint firstAttribute="width" constant="128" id="NoM-SN-UPP"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="imF-eV-ra0" userLabel="🀲👆🏼゛">
+                                <rect key="frame" x="625.5" y="24" width="208.5" height="1194"/>
+                                <connections>
+                                    <action selector="🀲👆🏼゛:" destination="vTh-Xf-0lJ" eventType="touchUpInside" id="PwC-GJ-mZB"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WSV-gi-7b4" userLabel="🀸👆🏼゛">
+                                <rect key="frame" x="0.0" y="24" width="208.5" height="1194"/>
+                                <connections>
+                                    <action selector="🀸👆🏼゛:" destination="vTh-Xf-0lJ" eventType="touchUpInside" id="4dx-QF-32Q"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="UiB-P3-W3y" firstAttribute="centerX" secondItem="2Hi-FC-iI2" secondAttribute="centerX" id="27u-Pb-h8d"/>
+                            <constraint firstItem="imF-eV-ra0" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="88q-WZ-fqv" secondAttribute="leading" symbolic="YES" id="2cx-nP-ltW"/>
+                            <constraint firstItem="imF-eV-ra0" firstAttribute="width" secondItem="2Hi-FC-iI2" secondAttribute="width" multiplier="1:4" id="HVl-4E-xQK"/>
                             <constraint firstItem="UiB-P3-W3y" firstAttribute="centerY" secondItem="2Hi-FC-iI2" secondAttribute="centerY" id="MrN-0i-fM0"/>
+                            <constraint firstItem="imF-eV-ra0" firstAttribute="top" secondItem="88q-WZ-fqv" secondAttribute="top" id="NoL-Jf-hM7"/>
                             <constraint firstItem="88q-WZ-fqv" firstAttribute="trailing" secondItem="IED-SJ-1K0" secondAttribute="trailing" id="Slk-C4-SfL"/>
+                            <constraint firstItem="WSV-gi-7b4" firstAttribute="width" secondItem="2Hi-FC-iI2" secondAttribute="width" multiplier="1:4" id="Tkf-h9-r8h"/>
                             <constraint firstItem="UiB-P3-W3y" firstAttribute="height" secondItem="2Hi-FC-iI2" secondAttribute="height" constant="4" id="VjV-k7-Jv0"/>
+                            <constraint firstItem="imF-eV-ra0" firstAttribute="height" secondItem="2Hi-FC-iI2" secondAttribute="height" id="X65-xO-W6X"/>
+                            <constraint firstAttribute="trailing" secondItem="imF-eV-ra0" secondAttribute="trailing" id="YBd-tB-Re3"/>
+                            <constraint firstItem="imF-eV-ra0" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="WSV-gi-7b4" secondAttribute="trailing" constant="8" symbolic="YES" id="emD-OV-leR"/>
                             <constraint firstItem="88q-WZ-fqv" firstAttribute="bottom" secondItem="IED-SJ-1K0" secondAttribute="bottom" id="iW3-8l-rql"/>
+                            <constraint firstItem="88q-WZ-fqv" firstAttribute="top" secondItem="WSV-gi-7b4" secondAttribute="top" id="tLI-wK-w0C"/>
                             <constraint firstItem="UiB-P3-W3y" firstAttribute="width" secondItem="2Hi-FC-iI2" secondAttribute="width" constant="4" id="tSa-HE-dEs"/>
+                            <constraint firstItem="WSV-gi-7b4" firstAttribute="leading" secondItem="88q-WZ-fqv" secondAttribute="leading" id="v9e-xd-9bL"/>
+                            <constraint firstItem="WSV-gi-7b4" firstAttribute="height" secondItem="2Hi-FC-iI2" secondAttribute="height" id="zmq-g0-K8Z"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="88q-WZ-fqv"/>
                         <connections>
