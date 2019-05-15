@@ -1,4 +1,3 @@
-
 import UIKit
 import PDFKit
 import ARKit
@@ -6,7 +5,12 @@ import ARKit
 class PdfController: UIViewController,ARSessionDelegate,ARSCNViewDelegate {
     
     @IBOutlet weak var 📖: PDFView!
-    var Ⓐ: ARSCNView!
+    
+    @IBOutlet weak var 👤: UIImageView!
+    
+    var Ⓐ:ARSCNView!
+    
+    var 🔖 = false
     
     var 🕰😑start: Date!
     var 🕰😑🔛: Date!
@@ -26,11 +30,19 @@ class PdfController: UIViewController,ARSessionDelegate,ARSCNViewDelegate {
         📖.pageShadowsEnabled = true
         📖.isUserInteractionEnabled = false
         
-        if let 📍 = Bundle.main.url(forResource: "WELCOME", withExtension: "pdf") {
+        if 🔖 {
+            let 🗂 = FileManager.default
+            let 📍 = URL(string: 🗂.urls(for: .documentDirectory, in: .userDomainMask)[0].absoluteString + "OpenedPDF.pdf")!
             if let 📘 = PDFDocument(url: 📍) {
-                📘.page(at: 0)?.thumbnail(of: CGSize(width: 100, height: 100), for: .trimBox)
                 📖.document = 📘
                 📖.goToFirstPage(nil)
+            }
+        } else {
+            if let 📍 = Bundle.main.url(forResource: "WELCOME", withExtension: "pdf") {
+                if let 📘 = PDFDocument(url: 📍) {
+                    📖.document = 📘
+                    📖.goToFirstPage(nil)
+                }
             }
         }
     }
@@ -43,15 +55,12 @@ class PdfController: UIViewController,ARSessionDelegate,ARSCNViewDelegate {
         
         Ⓐ = ARSCNView()
         view.addSubview(Ⓐ)
-        
         Ⓐ.delegate = self
         Ⓐ.session.delegate = self
         let 🎛 = ARFaceTrackingConfiguration()
         Ⓐ.session.run(🎛, options: [.resetTracking, .removeExistingAnchors])
-        Ⓐ.isHidden = true
         
         UIApplication.shared.isIdleTimerDisabled = true
-        
     }
     
     @IBAction func 👆🏼三三(_ sender: Any) {
@@ -75,6 +84,13 @@ class PdfController: UIViewController,ARSessionDelegate,ARSCNViewDelegate {
     }
     
     func renderer(_ renderer: SCNSceneRenderer, didUpdate node: SCNNode, for anchor: ARAnchor) {
+        
+        DispatchQueue.main.async {
+            if self.👤.isHidden == false{
+                self.👤.isHidden = true
+            }
+        }
+        
         guard let 🏷 = anchor as? ARFaceAnchor else { return }
         guard let 🌡👀 = 🏷.blendShapes[.eyeBlinkLeft]?.doubleValue else { return }
         
@@ -100,9 +116,8 @@ class PdfController: UIViewController,ARSessionDelegate,ARSCNViewDelegate {
     }
     
     override var keyCommands: [UIKeyCommand]?{
-        let a = [UIKeyCommand(input: UIKeyCommand.inputRightArrow, modifierFlags: UIKeyModifierFlags.init(rawValue: 0), action: #selector(🗒)),
-                 UIKeyCommand(input: UIKeyCommand.inputLeftArrow, modifierFlags: UIKeyModifierFlags.init(rawValue: 0), action: #selector(🗒🔙))]
-        return a
+        return [UIKeyCommand(input: UIKeyCommand.inputRightArrow, modifierFlags: UIKeyModifierFlags.init(rawValue: 0), action: #selector(🗒)),
+                UIKeyCommand(input: UIKeyCommand.inputLeftArrow, modifierFlags: UIKeyModifierFlags.init(rawValue: 0), action: #selector(🗒🔙))]
     }
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {

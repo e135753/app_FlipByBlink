@@ -18,11 +18,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="834" height="1194"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="knZ-mC-LRC">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="knZ-mC-LRC" userLabel="FlipByBlink">
                                 <rect key="frame" x="60" y="60" width="556" height="597"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="cIo-6D-Jha" userLabel="📺">
-                                <rect key="frame" x="332" y="1064" width="152" height="152"/>
+                                <rect key="frame" x="332" y="1044" width="152" height="152"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="152" id="6f3-Jw-CGF"/>
                                     <constraint firstAttribute="height" constant="152" id="HCv-ul-Q5U"/>
@@ -34,7 +34,7 @@
                                     <action selector="📺:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IzA-hu-hai"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CqN-QT-zvj" userLabel="pdfCover">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CqN-QT-zvj" userLabel="📔">
                                 <rect key="frame" x="646" y="966" width="400" height="500"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nCK-nf-rsO">
@@ -45,10 +45,10 @@
                                 </constraints>
                                 <state key="normal" backgroundImage="coverEffect"/>
                                 <connections>
-                                    <segue destination="vTh-Xf-0lJ" kind="show" id="4Ad-RA-Ztt"/>
+                                    <segue destination="vTh-Xf-0lJ" kind="show" identifier="readBook" id="4Ad-RA-Ztt"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="kAJ-nn-BqD" userLabel="sample">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="kAJ-nn-BqD" userLabel="🚶🏿‍♀️">
                                 <rect key="frame" x="474" y="1044" width="152" height="152"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="152" id="0XZ-t3-H9I"/>
@@ -81,7 +81,7 @@
                             <constraint firstItem="CqN-QT-zvj" firstAttribute="top" secondItem="nCK-nf-rsO" secondAttribute="top" id="5Qb-9j-dxY"/>
                             <constraint firstItem="CqN-QT-zvj" firstAttribute="height" secondItem="nCK-nf-rsO" secondAttribute="height" id="AJl-Pl-f0R"/>
                             <constraint firstItem="RlK-LG-RvF" firstAttribute="top" secondItem="nCK-nf-rsO" secondAttribute="top" constant="50" id="Eeo-bY-kOX"/>
-                            <constraint firstAttribute="bottom" secondItem="cIo-6D-Jha" secondAttribute="bottom" constant="-22" id="Ika-tZ-fPE"/>
+                            <constraint firstAttribute="bottom" secondItem="cIo-6D-Jha" secondAttribute="bottom" constant="-2" id="Ika-tZ-fPE"/>
                             <constraint firstItem="CqN-QT-zvj" firstAttribute="leading" secondItem="nCK-nf-rsO" secondAttribute="leading" id="KXM-8v-hpR"/>
                             <constraint firstItem="knZ-mC-LRC" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="1:2" id="O0Y-da-T1g"/>
                             <constraint firstItem="CqN-QT-zvj" firstAttribute="width" secondItem="nCK-nf-rsO" secondAttribute="width" id="P1a-Mu-Q9D"/>
@@ -98,8 +98,8 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="pdfC" destination="CqN-QT-zvj" id="Wbp-Fu-M1w"/>
-                        <outlet property="readPdf" destination="nCK-nf-rsO" id="k5u-GR-8Jb"/>
+                        <outlet property="📓" destination="nCK-nf-rsO" id="k5u-GR-8Jb"/>
+                        <outlet property="📔" destination="CqN-QT-zvj" id="Wbp-Fu-M1w"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -118,13 +118,22 @@
                                 <rect key="frame" x="-2" y="-2" width="838" height="1198"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="waitIcon" translatesAutoresizingMaskIntoConstraints="NO" id="IED-SJ-1K0">
+                                <rect key="frame" x="706" y="1046" width="128" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="8BD-fO-OuZ"/>
+                                    <constraint firstAttribute="width" constant="128" id="NoM-SN-UPP"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="0.1333333333" green="0.15686274510000001" blue="0.19215686269999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="UiB-P3-W3y" firstAttribute="centerX" secondItem="2Hi-FC-iI2" secondAttribute="centerX" id="27u-Pb-h8d"/>
                             <constraint firstItem="UiB-P3-W3y" firstAttribute="centerY" secondItem="2Hi-FC-iI2" secondAttribute="centerY" id="MrN-0i-fM0"/>
+                            <constraint firstItem="88q-WZ-fqv" firstAttribute="trailing" secondItem="IED-SJ-1K0" secondAttribute="trailing" id="Slk-C4-SfL"/>
                             <constraint firstItem="UiB-P3-W3y" firstAttribute="height" secondItem="2Hi-FC-iI2" secondAttribute="height" constant="4" id="VjV-k7-Jv0"/>
+                            <constraint firstItem="88q-WZ-fqv" firstAttribute="bottom" secondItem="IED-SJ-1K0" secondAttribute="bottom" id="iW3-8l-rql"/>
                             <constraint firstItem="UiB-P3-W3y" firstAttribute="width" secondItem="2Hi-FC-iI2" secondAttribute="width" constant="4" id="tSa-HE-dEs"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="88q-WZ-fqv"/>
@@ -136,6 +145,7 @@
                         </connections>
                     </view>
                     <connections>
+                        <outlet property="👤" destination="IED-SJ-1K0" id="TQI-T6-NQc"/>
                         <outlet property="📖" destination="UiB-P3-W3y" id="cOC-mu-C3B"/>
                     </connections>
                 </viewController>
@@ -161,7 +171,7 @@
                     </connections>
                 </pinchGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="30" y="883"/>
+            <point key="canvasLocation" x="29" y="757"/>
         </scene>
     </scenes>
     <resources>
@@ -170,8 +180,9 @@
         <image name="fBBiCONrENEW" width="512" height="512"/>
         <image name="filerIconPdf" width="512" height="512"/>
         <image name="sampleIcon" width="512" height="512"/>
+        <image name="waitIcon" width="512" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="XEG-HP-UC2"/>
+        <segue reference="4Ad-RA-Ztt"/>
     </inferredMetricsTieBreakers>
 </document>
