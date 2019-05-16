@@ -6,10 +6,9 @@
 
 import UIKit
 import PDFKit
-import ARKit
 import AVKit
 
-class ViewController: UIViewController,ARSessionDelegate,ARSCNViewDelegate,UIDocumentPickerDelegate {
+class ViewController: UIViewController,UIDocumentPickerDelegate {
     
     @IBOutlet weak var 📔: UIImageView!
     @IBOutlet weak var 📓: UIButton!
@@ -19,8 +18,6 @@ class ViewController: UIViewController,ARSessionDelegate,ARSCNViewDelegate,UIDoc
         
         📔.transform = .init(rotationAngle: 0.3)
         📓.transform = .init(rotationAngle: 0.3)
-        
-        UIApplication.shared.isIdleTimerDisabled = true
         
         let 🗂 = FileManager.default
         let 📍 = URL(string: 🗂.urls(for: .documentDirectory, in: .userDomainMask)[0].absoluteString + "OpenedPDF.pdf")!
@@ -32,7 +29,6 @@ class ViewController: UIViewController,ARSessionDelegate,ARSCNViewDelegate,UIDoc
     @IBAction func 📁(_ sender: Any) {
         let 👩🏻‍💻 = UIDocumentPickerViewController(documentTypes: ["com.adobe.pdf"], in: .import)
         👩🏻‍💻.delegate = self
-        👩🏻‍💻.modalPresentationStyle = .fullScreen
         self.present(👩🏻‍💻, animated: true, completion: nil)
     }
     

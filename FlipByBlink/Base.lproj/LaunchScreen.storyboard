@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
-    <device id="retina4_7" orientation="portrait">
+    <device id="ipad11_0rounded" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,28 +15,28 @@
             <objects>
                 <viewController id="01J-lp-oVM" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="834" height="1194"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FlipByBlink" translatesAutoresizingMaskIntoConstraints="NO" id="rfd-ww-HQ4">
-                                <rect key="frame" x="60" y="60" width="250" height="333.5"/>
+                                <rect key="frame" x="60" y="60" width="556" height="597"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sampleIconForLaunch" translatesAutoresizingMaskIntoConstraints="NO" id="KML-D4-3FQ" userLabel="icon">
-                                <rect key="frame" x="15" y="517" width="152" height="152"/>
+                                <rect key="frame" x="474" y="1044" width="152" height="152"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="152" id="rYe-EL-wgy"/>
                                     <constraint firstAttribute="width" constant="152" id="wFo-Hb-Lxo"/>
                                 </constraints>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sampleIconForLaunch" translatesAutoresizingMaskIntoConstraints="NO" id="y70-S0-nYz" userLabel="icon">
-                                <rect key="frame" x="-137" y="517" width="152" height="152"/>
+                                <rect key="frame" x="322" y="1044" width="152" height="152"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="152" id="I3W-yK-eHW"/>
                                     <constraint firstAttribute="height" constant="152" id="iS9-bt-dpu"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="yOw-8O-nEx" userLabel="📁">
-                                <rect key="frame" x="187" y="489" width="128" height="128"/>
+                                <rect key="frame" x="646" y="1016" width="128" height="128"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="128" id="KaX-kc-Hot"/>
                                     <constraint firstAttribute="width" constant="128" id="pEZ-K6-a6k"/>

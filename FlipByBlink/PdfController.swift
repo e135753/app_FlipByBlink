@@ -8,8 +8,6 @@ class PdfController: UIViewController,ARSessionDelegate,ARSCNViewDelegate {
     
     @IBOutlet weak var 👤: UIImageView!
     
-    var Ⓐ:ARSCNView!
-    
     var 📘🔖 = false
     
     var 🕰😑start: Date!
@@ -27,7 +25,6 @@ class PdfController: UIViewController,ARSessionDelegate,ARSCNViewDelegate {
         📖.autoScales = true
         📖.displayMode = .singlePage
         📖.displaysPageBreaks = false
-        📖.pageShadowsEnabled = true
         📖.isUserInteractionEnabled = false
         
         if 📘🔖 {
@@ -53,12 +50,12 @@ class PdfController: UIViewController,ARSessionDelegate,ARSCNViewDelegate {
         🕰😑start = Date()
         🕰😑🔛 = Date()
         
-        Ⓐ = ARSCNView()
+        let Ⓐ = ARSCNView()
         view.addSubview(Ⓐ)
         Ⓐ.delegate = self
         Ⓐ.session.delegate = self
         let 🎛 = ARFaceTrackingConfiguration()
-        Ⓐ.session.run(🎛, options: [.resetTracking, .removeExistingAnchors])
+        Ⓐ.session.run(🎛)
         
         UIApplication.shared.isIdleTimerDisabled = true
     }
