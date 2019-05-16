@@ -63,7 +63,7 @@ class ViewController: UIViewController,ARSessionDelegate,ARSCNViewDelegate,UIDoc
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "readBook") {
             let 👩🏻‍💻: PdfController = (segue.destination as? PdfController)!
-            👩🏻‍💻.🔖 = true
+            👩🏻‍💻.📘🔖 = true
         }
     }
     

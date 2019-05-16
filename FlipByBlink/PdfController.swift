@@ -10,7 +10,7 @@ class PdfController: UIViewController,ARSessionDelegate,ARSCNViewDelegate {
     
     var Ⓐ:ARSCNView!
     
-    var 🔖 = false
+    var 📘🔖 = false
     
     var 🕰😑start: Date!
     var 🕰😑🔛: Date!
@@ -30,7 +30,7 @@ class PdfController: UIViewController,ARSessionDelegate,ARSCNViewDelegate {
         📖.pageShadowsEnabled = true
         📖.isUserInteractionEnabled = false
         
-        if 🔖 {
+        if 📘🔖 {
             let 🗂 = FileManager.default
             let 📍 = URL(string: 🗂.urls(for: .documentDirectory, in: .userDomainMask)[0].absoluteString + "OpenedPDF.pdf")!
             if let 📘 = PDFDocument(url: 📍) {
