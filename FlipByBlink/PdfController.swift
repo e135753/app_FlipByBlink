@@ -32,13 +32,11 @@ class PdfController: UIViewController,ARSessionDelegate,ARSCNViewDelegate {
             let 📍 = URL(string: 🗂.urls(for: .documentDirectory, in: .userDomainMask)[0].absoluteString + "OpenedPDF.pdf")!
             if let 📘 = PDFDocument(url: 📍) {
                 📖.document = 📘
-                📖.goToFirstPage(nil)
             }
         } else {
             if let 📍 = Bundle.main.url(forResource: "WELCOME", withExtension: "pdf") {
                 if let 📘 = PDFDocument(url: 📍) {
                     📖.document = 📘
-                    📖.goToFirstPage(nil)
                 }
             }
         }
