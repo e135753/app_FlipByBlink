@@ -33,7 +33,7 @@
     {
       "size" : "60x60",
       "idiom" : "iphone",
-      "filename" : "fBBiCONrENEW-3.png",
+      "filename" : "fbbIcon-2.png",
       "scale" : "2x"
     },
     {
@@ -79,19 +79,19 @@
     {
       "size" : "76x76",
       "idiom" : "ipad",
-      "filename" : "fBBiCONrENEW-1.png",
+      "filename" : "fbbIcon-3.png",
       "scale" : "2x"
     },
     {
       "size" : "83.5x83.5",
       "idiom" : "ipad",
-      "filename" : "fBBiCONrENEW-2.png",
+      "filename" : "fbbIcon-1.png",
       "scale" : "2x"
     },
     {
       "size" : "1024x1024",
       "idiom" : "ios-marketing",
-      "filename" : "fBBiCONrENEW.png",
+      "filename" : "fbbIcon.png",
       "scale" : "1x"
     }
   ],

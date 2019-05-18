@@ -15,6 +15,7 @@
 		C695088321ABA87700C2F72E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C695088121ABA87700C2F72E /* LaunchScreen.storyboard */; };
 		CD03369222842DF000CE92D8 /* WELCOME.pdf in Resources */ = {isa = PBXBuildFile; fileRef = CD03369122842DF000CE92D8 /* WELCOME.pdf */; };
 		CD03369422842E9400CE92D8 /* demo.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = CD03369322842E9400CE92D8 /* demo.mp4 */; };
+		CD7D13C8228926140096E7E0 /* PdfController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7D13C7228926140096E7E0 /* PdfController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		C695088421ABA87700C2F72E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CD03369122842DF000CE92D8 /* WELCOME.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = WELCOME.pdf; sourceTree = "<group>"; };
 		CD03369322842E9400CE92D8 /* demo.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = demo.mp4; sourceTree = "<group>"; };
+		CD7D13C7228926140096E7E0 /* PdfController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PdfController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 			children = (
 				C695087821ABA87400C2F72E /* AppDelegate.swift */,
 				C695087A21ABA87400C2F72E /* ViewController.swift */,
+				CD7D13C7228926140096E7E0 /* PdfController.swift */,
 				C695087C21ABA87400C2F72E /* Main.storyboard */,
 				C695087F21ABA87700C2F72E /* Assets.xcassets */,
 				C695088121ABA87700C2F72E /* LaunchScreen.storyboard */,
@@ -150,6 +153,7 @@
 			files = (
 				C695087B21ABA87400C2F72E /* ViewController.swift in Sources */,
 				C695087921ABA87400C2F72E /* AppDelegate.swift in Sources */,
+				CD7D13C8228926140096E7E0 /* PdfController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

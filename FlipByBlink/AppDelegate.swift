@@ -11,29 +11,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+        
         print("🗣 url is ",url)
         print("🗣 options is ",options)
-        
+
         let ud = UIDocument(fileURL: url)
-        
         print(ud)
-        
+
         let 🗂 = FileManager.default
-        
+
         let 📍 = URL(string: 🗂.urls(for: .documentDirectory, in: .userDomainMask)[0].absoluteString + "OpenedPDF.pdf")!
 
         do{ try 🗂.removeItem(at: 📍)
         }catch{ print("👿") }
-        
+
         do{ try 🗂.copyItem(at: url, to: 📍)
         }catch{ print("👿") }
 
         if let vc:ViewController = window?.rootViewController as? ViewController{
             if let 📘 = PDFDocument(url: 📍){
-                vc.📖.document = 📘
-                vc.📖.goToFirstPage(nil)
-                vc.📖.autoScales = true
-                vc.ⒷⒼ.isHidden = true
+                vc.📔.image = 📘.page(at: 0)?.thumbnail(of: CGSize(width: 450, height: 450), for: .artBox)
             }
         }
         return true
